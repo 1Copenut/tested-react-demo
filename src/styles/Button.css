@@ -1,0 +1,22 @@
+.button--good,
+.button--bad {
+  background: #add8e6;
+  border: 1px solid black;
+  color: #888;
+  display: inline;
+  height: 40px;
+  margin: 15px auto;
+  padding: 0;
+  width: 250px;
+}
+
+.button--bad {
+  line-height: 40px;
+  width: 248px;
+}
+
+.button--good {
+  color: #222;
+  cursor: pointer;
+  height: 42px;
+}
