@@ -15,5 +15,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-a11y": "^0.3.4",
+    "react-axe": "^2.1.7"
   }
 }

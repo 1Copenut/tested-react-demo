@@ -19,7 +19,7 @@ const Searchbox = (props) => {
           text={text}
           updateVal={updateVal}
         />
-        <Button text="Search for user" />
+        <Button text="Search for user" type="submit" />
       </div>
     </form>
   );

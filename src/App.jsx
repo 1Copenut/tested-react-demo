@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import gh from './config/constants';
-import Searchbox from './containers/Searchbox';
+import UserSearch from './components/UserSearch';
 import './styles/App.css';
 
 class App extends Component {
@@ -47,13 +47,12 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<div className="App-header">
-					<h1>Welcome to React&mdash;Where Components Go to Test A11y</h1>
-				</div>
 				<div className="App-block">
-					<Searchbox
+					<UserSearch
+						errorMsg={this.state.errorMsg}
 						labelId="con-searchbox-id"
 						inputVal={this.state.inputVal}
+						repoLen={this.state.repos}
 						submitVal={this.handleFormSubmit}
 						updateVal={this.handleInputChange}
 					/>
