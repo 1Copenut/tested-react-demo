@@ -10,6 +10,7 @@ class App extends Component {
 
 		this.state = {
 			errorMsg: '',
+			errorBool: false,
 			repos: [],
 			searchInput: undefined,
 		};
@@ -27,12 +28,14 @@ class App extends Component {
 
 				this.setState({
 					errorMsg: '',
+					errorBool: false,
 					repos
 				});
 			})
 			.catch(err => {
 				this.setState({
-					errorMsg: 'Something went wrong. Please try a new search.'
+					errorMsg: 'Something went wrong. Please try a new search.',
+					errorBool: true
 				});
 			});
 	}
@@ -50,9 +53,11 @@ class App extends Component {
 				<div className="App-block">
 					<UserSearch
 						errorMsg={this.state.errorMsg}
-						labelId="con-searchbox-id"
+						errorState={this.state.errorBool}
 						inputVal={this.state.inputVal}
+						labelId="con-searchbox-id"
 						repoLen={this.state.repos}
+						searchToggle={this.state.searchInput}
 						submitVal={this.handleFormSubmit}
 						updateVal={this.handleInputChange}
 					/>

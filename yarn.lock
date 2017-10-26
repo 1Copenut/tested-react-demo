@@ -2038,7 +2038,7 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
-custom-react-scripts@0.2.1:
+custom-react-scripts@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/custom-react-scripts/-/custom-react-scripts-0.2.1.tgz#4346a08ab01d2e7f54d1b92d5080b0ea4dd0ea95"
   dependencies:

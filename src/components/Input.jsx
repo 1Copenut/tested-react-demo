@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import noop from 'nooop';
-import '../styles/Input.css';
+import { input } from '../styles/Input.module.css';
 
 const Input = (props) => {
   const { inputVal, labelId, text, updateVal, } = props;
@@ -10,7 +10,7 @@ const Input = (props) => {
     <input
       aria-label={text}
       id={labelId}
-      className="input"
+      className={input}
       name="searchInput"
       onChange={updateVal}
       value={inputVal}

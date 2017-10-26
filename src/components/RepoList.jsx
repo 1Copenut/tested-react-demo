@@ -1,13 +1,15 @@
 import React from 'react';
 
 const RepoList = (props) => {
-    const { errorMsg } = props;
+    const { errorMsg, errorState, searchToggle } = props;
     let list;
 
-    if (errorMsg !== '') {
+    if (errorState) {
         list = errorMsg;
+    } else if (!errorState && !searchToggle) {
+        list = 'Enter a search term above to list user repos';
     } else {
-        list = 'User repos:';
+        list = ''
     }
 
     return (

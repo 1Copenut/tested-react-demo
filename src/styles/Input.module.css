@@ -2,5 +2,6 @@
   display: inline-block;
   height: 38px;
   margin-right: -1px;
+  vertical-align: top;
   width: 45%;
 }

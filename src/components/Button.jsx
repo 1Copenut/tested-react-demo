@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../styles/Button.css';
+import styles from '../styles/Button.module.css';
 
 const click = () => console.log('Clicked accessible button! :)');
 
@@ -10,7 +10,7 @@ const ButtonGood = (props) => {
 
   return (
     <button
-      className="button--good"
+      className={styles.buttonGood}
       onClick={click}
       {...rest}
     >{ text }</button>
