@@ -10,14 +10,17 @@ const Searchbox = (props) => {
     searchString,
     submitVal
   } = props;
-  const labelId = "username-search";  
+  const labelId = 'username-search';  
   const labelText = 'Enter a Github username';
 
   return (
     <form onSubmit={submitVal}>
       <div>
         <h6>Search Input</h6>
-        <Label labelId={labelId} text={labelText} />
+        <Label
+          labelId={labelId}
+          text={labelText}
+        />
         <div>
           <Input
             ariaLabel={labelText}
