@@ -56,8 +56,9 @@ class App extends Component {
 						errorState={this.state.errorBool}
 						inputVal={this.state.inputVal}
 						labelId="con-searchbox-id"
+						name="searchInput"
 						repoLen={this.state.repos}
-						searchToggle={this.state.searchInput}
+						searchString={this.state.searchInput}
 						submitVal={this.handleFormSubmit}
 						updateVal={this.handleInputChange}
 					/>

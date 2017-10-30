@@ -3,31 +3,29 @@ import PropTypes from 'prop-types';
 import Input from '../components/Input';
 import Label from '../components/Label';
 import Button from '../components/Button';
+import noop from 'nooop';
 
 const Searchbox = (props) => {
   const {
-    inputVal,
-    labelId,
-    searchToggle,
-    submitVal,
-    updateVal
+    searchString,
+    submitVal
   } = props;
-  const text = 'Enter a Github username';
+  const labelId = "username-search";  
+  const labelText = 'Enter a Github username';
 
   return (
     <form onSubmit={submitVal}>
       <div>
         <h6>Search Input</h6>
-        <Label labelId={labelId} text={text} />
+        <Label labelId={labelId} text={labelText} />
         <div>
           <Input
-            inputVal={inputVal}
+            ariaLabel={labelText}
             labelId={labelId}
-            text={text}
-            updateVal={updateVal}
+            {...props}
           />
           <Button
-            disabled={!searchToggle ? true : false}
+            disabled={!searchString ? true : false}
             text="Search for user"
             type="submit"
           />
@@ -38,14 +36,13 @@ const Searchbox = (props) => {
 };
 
 Searchbox.propTypes = {
-  inputVal: PropTypes.string,
-  labelId: PropTypes.string,
-  submitVal: PropTypes.func,
-  updateVal: PropTypes.func.isRequired,
+  Button: PropTypes.element,
+  Input: PropTypes.element,
+  submitVal: PropTypes.func.isRequired
 };
 
 Searchbox.defaultProps = {
-  labelId: '',
-};
+  submitVal: noop
+}
 
 export default Searchbox;

@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import noop from 'nooop';
-import { input } from '../styles/Input.module.css';
+import styles from '../styles/Input.module.css';
 
 const Input = (props) => {
-  const { inputVal, labelId, text, updateVal, } = props;
+  const { ariaLabel, inputVal, labelId, name, updateVal, } = props;
 
   return (
     <input
-      aria-label={text}
+      aria-label={ariaLabel}
+      className={styles.input}
       id={labelId}
-      className={input}
-      name="searchInput"
+      name={name}
       onChange={updateVal}
       value={inputVal}
     />
@@ -19,16 +19,16 @@ const Input = (props) => {
 };
 
 Input.propTypes = {
+  ariaLabel: PropTypes.string,
   inputVal: PropTypes.string,
   labelId: PropTypes.string,
-  text: PropTypes.string,
-  update: PropTypes.func.isRequired,
+  updateVal: PropTypes.func.isRequired,
 };
 
 Input.defaultProps = {
+  ariaLabel: undefined,
   labelId: '',
-  text: '',
-  update: noop,
+  updateVal: noop
 };
 
 export default Input;

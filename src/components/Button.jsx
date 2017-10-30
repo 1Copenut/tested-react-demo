@@ -1,31 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import noop from 'nooop';
 
 import styles from '../styles/Button.module.css';
 
-const click = () => console.log('Clicked accessible button! :)');
-
 const ButtonGood = (props) => {
-  const { text, ...rest } = props;
+  const { 
+    submitVal,
+    text
+  } = props;
 
   return (
     <button
       className={styles.buttonGood}
-      onClick={click}
-      {...rest}
+      onClick={submitVal}
+      {...props}
     >{ text }</button>
   );
 };
 
 ButtonGood.propTypes = {
-  disabled: PropTypes.bool.isRequired,
-  onClick: PropTypes.func,
-  text: PropTypes.string.isRequired,
+  submitVal: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 ButtonGood.defaultProps = {
   disabled: false,
-  onClick: click,
+  submitVal: noop
 };
 
 export default ButtonGood;
