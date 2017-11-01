@@ -1,13 +1,13 @@
 import React from 'react';
-import Searchbox from './Searchbox';
-import RepoList from './RepoList';
+import Searchbox from '../molecules/Searchbox';
+import UserRepos from './UserRepos';
 import PropTypes from 'prop-types';
 
 const UserSearch = (props) => {
     return (
         <div>
             <Searchbox {...props} />
-            <RepoList {...props} />
+            <UserRepos {...props} />
         </div>
     );
 };

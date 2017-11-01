@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import gh from './config/constants';
-import UserSearch from './components/UserSearch';
+import UserSearch from './components/organisms/UserSearch';
 import './styles/App.css';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
 		this.state = {
 			errorMsg: '',
 			errorBool: false,
-			repos: [],
+			userRepos: [],
 			searchInput: undefined,
 		};
 	}
@@ -24,12 +24,12 @@ class App extends Component {
 
 		axios.get(`${gh.GITHUB_USER_STRING}${userName}/repos`)
 			.then(res => {
-				const repos = res.data;
+				const userRepos = res.data;
 
 				this.setState({
 					errorMsg: '',
 					errorBool: false,
-					repos
+					userRepos
 				});
 			})
 			.catch(err => {
@@ -57,7 +57,7 @@ class App extends Component {
 						inputVal={this.state.inputVal}
 						labelId="con-searchbox-id"
 						name="searchInput"
-						repoLen={this.state.repos}
+						userRepos={this.state.userRepos}
 						searchString={this.state.searchInput}
 						submitVal={this.handleFormSubmit}
 						updateVal={this.handleInputChange}

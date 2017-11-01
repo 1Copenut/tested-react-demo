@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Input from '../components/Input';
-import Label from '../components/Label';
-import Button from '../components/Button';
+import Input from '../atoms/Input';
+import Label from '../atoms/Label';
+import Button from '../atoms/Button';
 import noop from 'nooop';
 
 const Searchbox = (props) => {

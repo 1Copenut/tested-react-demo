@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import noop from 'nooop';
-import styles from '../styles/Input.module.css';
+import styles from '../../styles/Input.module.css';
 
 const Input = (props) => {
   const { ariaLabel, inputVal, labelId, name, updateVal, } = props;

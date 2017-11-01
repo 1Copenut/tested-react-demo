@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RepoList = (props) => {
+const UserRepos = (props) => {
     const { errorMsg, errorState, searchString } = props;
     let list;
 
@@ -18,14 +18,14 @@ const RepoList = (props) => {
     );
 };
 
-RepoList.propTypes = {
+UserRepos.propTypes = {
     errorMsg: PropTypes.string,
     errorState: PropTypes.bool.isRequired,
     searchString: PropTypes.string
 };
 
-RepoList.defaultProps = {
+UserRepos.defaultProps = {
     errorState: false
 };
 
-export default RepoList;
+export default UserRepos;
